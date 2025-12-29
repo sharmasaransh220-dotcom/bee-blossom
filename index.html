@@ -1,0 +1,216 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bee Blossom | Sugam Farms</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background: linear-gradient(to bottom, rgba(255,215,0,0.2), rgba(0,0,0,0.6)),
+    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee") no-repeat center/cover;
+    min-height:100vh;
+    color:#fff;
+    overflow:hidden;
+}
+
+/* Bee animation */
+.bee{
+    position:absolute;
+    width:40px;
+    animation: fly 12s linear infinite;
+}
+@keyframes fly{
+    0%{transform:translateX(-50px) translateY(100px);}
+    50%{transform:translateX(100vw) translateY(300px);}
+    100%{transform:translateX(-50px) translateY(600px);}
+}
+
+/* Auth Section */
+.auth-section{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    backdrop-filter: blur(6px);
+}
+
+.auth-box{
+    background: rgba(255,255,255,0.12);
+    border-radius:18px;
+    padding:30px;
+    width:340px;
+    text-align:center;
+    box-shadow:0 0 40px rgba(255,200,0,0.4);
+}
+
+.auth-box h1{
+    font-family:'Playfair Display', serif;
+    margin-bottom:10px;
+    color:#ffd700;
+}
+
+.auth-box input{
+    width:100%;
+    padding:12px;
+    margin:8px 0;
+    border:none;
+    border-radius:8px;
+    outline:none;
+}
+
+.auth-box button{
+    background:#ffd700;
+    color:#000;
+    border:none;
+    padding:12px;
+    width:100%;
+    border-radius:10px;
+    font-weight:600;
+    cursor:pointer;
+    margin-top:10px;
+}
+
+.auth-box button:hover{
+    background:#ffb700;
+}
+
+.terms{
+    font-size:12px;
+    margin-top:10px;
+    text-align:left;
+}
+
+/* Second Interface */
+.main-site{
+    display:none;
+    min-height:100vh;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.8)),
+    url("https://images.unsplash.com/photo-1501785888041-af3ef285b470") no-repeat center/cover;
+    padding:40px;
+}
+
+header{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+header h1{
+    font-family:'Playfair Display', serif;
+    font-size:42px;
+    color:#ffd700;
+}
+
+header p{
+    font-size:16px;
+    opacity:0.9;
+}
+
+.section{
+    background: rgba(255,255,255,0.1);
+    padding:25px;
+    border-radius:20px;
+    margin-bottom:20px;
+    box-shadow:0 0 30px rgba(255,215,0,0.2);
+}
+
+.section h2{
+    color:#ffd700;
+    margin-bottom:10px;
+}
+
+footer{
+    text-align:center;
+    margin-top:40px;
+    font-size:13px;
+    opacity:0.8;
+}
+</style>
+</head>
+
+<body>
+
+<img class="bee" src="https://cdn-icons-png.flaticon.com/512/616/616408.png">
+
+<!-- FIRST INTERFACE -->
+<div class="auth-section" id="auth">
+    <div class="auth-box">
+        <h1>🐝 Bee Blossom</h1>
+        <p>by Sugam Farms</p>
+
+        <input type="text" placeholder="Full Name">
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+
+        <div class="terms">
+            <input type="checkbox" id="tc"> I agree to the
+            <a href="#" style="color:#ffd700;">Terms & Conditions</a>
+        </div>
+
+        <button onclick="enterSite()">Sign Up</button>
+        <hr style="margin:15px 0;opacity:0.3;">
+        <button onclick="enterSite()">Sign In</button>
+    </div>
+</div>
+
+<!-- SECOND INTERFACE -->
+<div class="main-site" id="site">
+    <header>
+        <h1>Pure Honey from the Hills</h1>
+        <p>Nature • Purity • Tradition</p>
+    </header>
+
+    <div class="section">
+        <h2>🍯 About Our Honey</h2>
+        <p>
+            Bee Blossom honey is harvested from pristine mountain regions,
+            where bees thrive among wildflowers, forests and fresh air.
+            No chemicals. No compromise.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>🌼 Why Bee Blossom?</h2>
+        <p>
+            ✔ 100% Raw & Natural  
+            ✔ Ethically harvested  
+            ✔ Mountain sourced  
+            ✔ Trusted by families
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>🐝 From Hive to Home</h2>
+        <p>
+            Our bees live naturally, pollinating flowers across valleys,
+            producing golden honey rich in nutrients and taste.
+        </p>
+    </div>
+
+    <footer>
+        © 2025 Bee Blossom by Sugam Farms | Crafted with Nature 🍃
+    </footer>
+</div>
+
+<script>
+function enterSite(){
+    if(!document.getElementById("tc").checked){
+        alert("Please accept the Terms & Conditions");
+        return;
+    }
+    document.getElementById("auth").style.display="none";
+    document.getElementById("site").style.display="block";
+}
+</script>
+
+</body>
+</html>
